@@ -53,7 +53,7 @@ as opposed to what this RFC proposes:
 
 The benefit of the first syntax is that it's a bit more concise, would engender more standardization of links, and would help with doc tooling such as refactoring following.
 
-This RFC doesn't propose the first syntax because it would best be written as a CommonMark extension and a) we don't currently use a CommonMark processor, and b) CommonMark has not yet standardized extensions [1]. This proposal is a small short term fix for immediate pain, and does not preclude the semantic link scheme once that becomes viable. `::/` style links may still be desired even when we have semantic links in order to support links to things that aren't rust items, but are contained in the doc tree.
+This RFC doesn't propose the first syntax because it would best be written as a CommonMark extension and a) we don't currently use a CommonMark processor, and b) CommonMark has [not yet][commonmark-plugin] standardized extensions. This proposal is a small short term fix for immediate pain, and does not preclude the semantic link scheme once that becomes viable. `::/` style links may still be desired even when we have semantic links in order to support links to things that aren't rust items, but are contained in the doc tree.
 
 Another drawback is that this change will make it slightly harder to switch to a new markdown processor, since the new processor will also have to support this behavior.
 
@@ -79,4 +79,4 @@ Since this is more complicated, not precluded by my proposal, and doesn't help w
 
 I have fully implemented the proposed solution and it works well. All open questions should be covered in Alternatives and Drawbacks.
 
-[1]: https://talk.commonmark.org/t/generic-directives-plugins-syntax
+[commonmark-plugin]: https://talk.commonmark.org/t/generic-directives-plugins-syntax
