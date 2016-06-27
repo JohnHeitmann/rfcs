@@ -51,7 +51,7 @@ as opposed to what this RFC proposes:
 > 
 > [\`Ord`]: ::/std/cmp/trait.Ord.html
 
-The benefit of the first syntax is that it's a bit more concise, would engender more standardization of links, and would help with doc tooling such as refactoring-following.
+The benefit of the first syntax is that it's a bit more concise, would engender more standardization of links, and would help with doc tooling such as refactoring following.
 
 This RFC doesn't propose the first syntax because it would best be written as a CommonMark extension and a) we don't currently use a CommonMark processor, and b) CommonMark has not yet standardized extensions [1]. This proposal is a small short term fix for immediate pain, and does not preclude the semantic link scheme once that becomes viable. `::/` style links may still be desired even when we have semantic links in order to support links to things that aren't rust items, but are contained in the doc tree.
 
