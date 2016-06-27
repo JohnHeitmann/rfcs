@@ -77,6 +77,6 @@ Since this is more complicated, not precluded by my proposal, and doesn't help w
 # Unresolved questions
 [unresolved]: #unresolved-questions
 
-I have fully implemented the proposed solution and it works well. All open questions should be covered in Alternatives and Drawbacks.
+I have fully implemented the proposed solution and it works well, so all open questions are about design and are already covered in Alternatives and Drawbacks.
 
 [commonmark-plugin]: https://talk.commonmark.org/t/generic-directives-plugins-syntax
