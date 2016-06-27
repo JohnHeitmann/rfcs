@@ -34,16 +34,16 @@ The markdown processor processes links like normal, except that an interceptor l
 
 Everything after the `::/` remains intact and appears raw in the resulting HTML. It's legal and even advisable to link to supplemental documentation-- for example linking to the rust book from libstd-- using this syntax. It's not just for rust items.
 
-The hoedown parser we use supports extending the link processing. It also supports parsing the leading colon correctly.
+The hoedown parser we use supports link processing extensions. It also handles the leading colon correctly.
 
-The spelling `::` part of the spelling was chosen since `::` already means module root. The `/` part of the spelling was chosen to allow for future enhancements (not proposed here) that might allow for more of the rust item name. e.g. `::std::cmp::Ord` as a link.
+The `::` part of the spelling was chosen since `::` already means module root. The `/` part of the spelling was chosen to allow for future enhancements (not proposed here) that might allow for more of the rust item name. e.g. `::std::cmp::Ord` as a link.
 
 # Drawbacks
 [drawbacks]: #drawbacks
 
 This is not the best possible solution. The best solution to this problem would be to encode the semantic meaning of the link directly at the link location, and leaving HTML href creation entirely to the processor. For example:
 
-> The :{rdoc=std::cmp::Ord} trait is the grooviest trait there is!
+> The :rust{std::cmp::Ord} trait is the grooviest trait there is!
 
 as opposed to what this RFC proposes:
 
@@ -53,7 +53,7 @@ as opposed to what this RFC proposes:
 
 The benefit of the first syntax is that it's a bit more concise, would engender more standardization of links, and would help with doc tooling such as refactoring-following.
 
-This RFC doesn't propose the first syntax because it would best be written as a CommonMark extension and a) we don't currently use a CommonMark processor, and b) CommonMark has not yet standardized extensions. This proposal is a small short term fix for immediate pain, and does not preclude the semantic link scheme once that becomes viable. `::/` style links may still be desired even when we have semantic links in order to support links to things that aren't rust items, but are contained in the doc tree.
+This RFC doesn't propose the first syntax because it would best be written as a CommonMark extension and a) we don't currently use a CommonMark processor, and b) CommonMark has not yet standardized extensions [1]. This proposal is a small short term fix for immediate pain, and does not preclude the semantic link scheme once that becomes viable. `::/` style links may still be desired even when we have semantic links in order to support links to things that aren't rust items, but are contained in the doc tree.
 
 Another drawback is that this change will make it slightly harder to switch to a new markdown processor, since the new processor will also have to support this behavior.
 
@@ -78,3 +78,5 @@ Since this is more complicated, not precluded by my proposal, and doesn't help w
 [unresolved]: #unresolved-questions
 
 I have fully implemented the proposed solution and it works well. All open questions should be covered in Alternatives and Drawbacks.
+
+[1] https://talk.commonmark.org/t/generic-directives-plugins-syntax
