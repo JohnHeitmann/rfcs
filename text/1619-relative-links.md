@@ -72,7 +72,7 @@ Maybe we don't need to wait for CommonMark extensions and a new markdown process
 
 > The [\`Ord\`]\(::std::cmp::Ord) trait is the grooviest trait there is!
 
-Since this is more complicated, not precluded by my proposal, and doesn't help with non-item links, I think it's best left to the long term.
+Since this is more complicated, not precluded by my proposal, and doesn't help with non-item links, I think it's best left to the future.
 
 # Unresolved questions
 [unresolved]: #unresolved-questions
