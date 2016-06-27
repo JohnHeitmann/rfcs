@@ -79,4 +79,4 @@ Since this is more complicated, not precluded by my proposal, and doesn't help w
 
 I have fully implemented the proposed solution and it works well. All open questions should be covered in Alternatives and Drawbacks.
 
-[1] https://talk.commonmark.org/t/generic-directives-plugins-syntax
+[1]: https://talk.commonmark.org/t/generic-directives-plugins-syntax
